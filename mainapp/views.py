@@ -1,3 +1,4 @@
+
 from django.conf import settings
 from django.shortcuts import render
 from django.utils import timezone
@@ -5,8 +6,10 @@ from django.utils import timezone
 from .models import Product, ProductCategory
 
 
+
 def main(request):
     title = "главная"
+
 
     products = Product.objects.all()
 
@@ -26,6 +29,7 @@ def products(request, pk=None):
     }
     if pk:
         print(f"User select category: {pk}")
+
     return render(request, "mainapp/products.html", content)
 
 
@@ -34,6 +38,7 @@ def contact(request):
     visit_date = timezone.now()
     locations = [
         {"city": "Москва", "phone": "+7-888-888-8888", "email": "info@geekshop.ru", "address": "В пределах МКАД"},
+
         {
             "city": "Екатеринбург",
             "phone": "+7-777-777-7777",
@@ -48,4 +53,5 @@ def contact(request):
         },
     ]
     content = {"title": title, "visit_date": visit_date, "locations": locations}
+
     return render(request, "mainapp/contact.html", content)
