@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     "mainapp",
     "authnapp",
     "basketapp",
+    "adminapp",
 ]
-
 # Auth model
 AUTH_USER_MODEL = "authnapp.ShopUser"
 
